@@ -193,6 +193,7 @@ class Group(TembaObject):
     uuid = SimpleField()
     name = SimpleField()
     query = SimpleField()
+    status = SimpleField()
     count = IntegerField()
 
 
