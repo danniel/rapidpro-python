@@ -145,6 +145,7 @@ class Field(TembaObject):
     key = SimpleField()
     label = SimpleField()
     value_type = SimpleField()
+    pinned = BooleanField()
 
 
 class Flow(TembaObject):
