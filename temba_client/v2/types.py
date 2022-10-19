@@ -132,6 +132,8 @@ class Contact(TembaObject):
     stopped = BooleanField()
     created_on = DatetimeField()
     modified_on = DatetimeField()
+    last_seen_on = DatetimeField()
+    status = SimpleField()  # seems to not be sent by ilhasoft api
 
 
 class Export(TembaObject):
