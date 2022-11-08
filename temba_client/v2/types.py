@@ -221,6 +221,8 @@ class Message(TembaObject):
     created_on = DatetimeField()
     sent_on = DatetimeField()
     modified_on = DatetimeField()
+    media = SimpleField()
+    archived = SimpleField()
 
 
 class Org(TembaObject):
