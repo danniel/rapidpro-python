@@ -221,6 +221,7 @@ class Message(TembaObject):
     created_on = DatetimeField()
     sent_on = DatetimeField()
     modified_on = DatetimeField()
+    attachments = ObjectListField(item_class=ObjectRef)
     media = SimpleField()
     archived = SimpleField()
 
