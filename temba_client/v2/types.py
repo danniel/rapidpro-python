@@ -288,4 +288,5 @@ class Run(TembaObject):
 class Ticketer(TembaObject):
     uuid = SimpleField()
     name = SimpleField()
+    type = SimpleField()
     created_on = DatetimeField()
