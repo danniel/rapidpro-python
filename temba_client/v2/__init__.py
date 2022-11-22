@@ -24,6 +24,7 @@ from .types import (
     Run,
     Ticketer,
     Topic,
+    User,
 )
 
 
@@ -697,13 +698,10 @@ class TembaClient(BaseCursorClient):
         self._post("message_actions", None, self._build_params(messages=messages, action="delete"))
 
     def get_ticketers(self, uuid=None, name=None, type=None, created_on=None):
-        """
-        Gets all matching ticketers
-        """
         return self._get_query("ticketers", self._build_params(uuid=uuid, name=name, type=type, created_on=created_on), Ticketer)
 
     def get_topics(self, uuid=None, name=None, created_on=None):
-        """
-        Gets all matching ticket topics
-        """
         return self._get_query("topics", self._build_params(uuid=uuid, name=name, created_on=created_on), Topic)
+
+    def get_users(self, email=None, first_name=None, last_name=None, role=None, created_on=None):
+        return self._get_query("users", self._build_params(email=email, first_name=first_name, last_name=last_name, role=role, created_on=created_on), User)

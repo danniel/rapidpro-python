@@ -296,3 +296,11 @@ class Topic(TembaObject):
     uuid = SimpleField()
     name = SimpleField()
     created_on = DatetimeField()
+
+
+class User(TembaObject):
+    email = SimpleField()
+    first_name = SimpleField()
+    last_name = SimpleField()
+    role = SimpleField()
+    created_on = DatetimeField()
