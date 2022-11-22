@@ -283,3 +283,9 @@ class Run(TembaObject):
     modified_on = DatetimeField()
     exited_on = DatetimeField()
     exit_type = SimpleField()
+
+
+class Ticketer(TembaObject):
+    uuid = SimpleField()
+    name = SimpleField()
+    created_on = DatetimeField()
