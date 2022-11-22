@@ -22,6 +22,7 @@ from .types import (
     ResthookEvent,
     ResthookSubscriber,
     Run,
+    Ticketer,
 )
 
 
@@ -693,3 +694,9 @@ class TembaClient(BaseCursorClient):
         :param list[*] messages: message objects or ids
         """
         self._post("message_actions", None, self._build_params(messages=messages, action="delete"))
+
+    def get_ticketers(self, uuid=None, name=None, created_on=None):
+        """
+        Gets all matching message ticketers
+        """
+        return self._get_query("ticketers", self._build_params(uuid=uuid, name=name, created_on=created_on), Ticketer)
