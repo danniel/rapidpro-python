@@ -23,6 +23,7 @@ from .types import (
     ResthookSubscriber,
     Run,
     Ticketer,
+    Topic,
 )
 
 
@@ -695,8 +696,14 @@ class TembaClient(BaseCursorClient):
         """
         self._post("message_actions", None, self._build_params(messages=messages, action="delete"))
 
-    def get_ticketers(self, uuid=None, name=None, created_on=None):
+    def get_ticketers(self, uuid=None, name=None, type=None, created_on=None):
         """
-        Gets all matching message ticketers
+        Gets all matching ticketers
         """
-        return self._get_query("ticketers", self._build_params(uuid=uuid, name=name, created_on=created_on), Ticketer)
+        return self._get_query("ticketers", self._build_params(uuid=uuid, name=name, type=type, created_on=created_on), Ticketer)
+
+    def get_topics(self, uuid=None, name=None, created_on=None):
+        """
+        Gets all matching ticket topics
+        """
+        return self._get_query("topics", self._build_params(uuid=uuid, name=name, created_on=created_on), Topic)

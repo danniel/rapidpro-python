@@ -290,3 +290,9 @@ class Ticketer(TembaObject):
     name = SimpleField()
     type = SimpleField()
     created_on = DatetimeField()
+
+
+class Topic(TembaObject):
+    uuid = SimpleField()
+    name = SimpleField()
+    created_on = DatetimeField()
