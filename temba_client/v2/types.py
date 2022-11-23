@@ -238,7 +238,7 @@ class Org(TembaObject):
     primary_language = SimpleField()
     timezone = SimpleField()
     date_style = SimpleField()
-    start = ObjectField(item_class=Credits)
+    credits = ObjectField(item_class=Credits)
     anon = SimpleField()
 
 
