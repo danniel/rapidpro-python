@@ -227,6 +227,10 @@ class Message(TembaObject):
 
 
 class Org(TembaObject):
+    class Credits(TembaObject):
+        used = SimpleField()
+        remaining = SimpleField()
+
     uuid = SimpleField()
     name = SimpleField()
     country = SimpleField()
@@ -234,6 +238,7 @@ class Org(TembaObject):
     primary_language = SimpleField()
     timezone = SimpleField()
     date_style = SimpleField()
+    start = ObjectField(item_class=Credits)
     anon = SimpleField()
 
 
