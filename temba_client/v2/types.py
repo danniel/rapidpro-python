@@ -165,12 +165,15 @@ class Flow(TembaObject):
 
     uuid = SimpleField()
     name = SimpleField()
+    type = SimpleField()
     archived = BooleanField()
     labels = ObjectListField(item_class=ObjectRef)
     expires = IntegerField()
     created_on = DatetimeField()
+    modified_on = DatetimeField()
     runs = ObjectField(item_class=Runs)
     results = ObjectListField(item_class=FlowResult)
+    parent_refs = ObjectListField(item_class=ObjectRef)
 
 
 class FlowStart(TembaObject):
@@ -180,6 +183,7 @@ class FlowStart(TembaObject):
     contacts = ObjectListField(item_class=ObjectRef)
     status = SimpleField()
     restart_participants = BooleanField()
+    exclude_active = BooleanField()
     params = SimpleField()
     created_on = DatetimeField()
     modified_on = DatetimeField()
@@ -278,6 +282,7 @@ class Run(TembaObject):
         input = SimpleField()
 
     id = IntegerField()
+    uuid = SimpleField()
     flow = ObjectField(item_class=ObjectRef)
     contact = ObjectField(item_class=ObjectRef)
     start = ObjectField(item_class=StartRef)
