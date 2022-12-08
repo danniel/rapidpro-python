@@ -173,7 +173,7 @@ class Flow(TembaObject):
     modified_on = DatetimeField()
     runs = ObjectField(item_class=Runs)
     results = ObjectListField(item_class=FlowResult)
-    # parent_refs = ObjectListField(item_class=ObjectRef)
+    # parent_refs = ObjectListField(item_class=ObjectRef)  # TODO: disabled it because it seems to trigger a type error
 
 
 class FlowStart(TembaObject):
