@@ -167,7 +167,7 @@ class Flow(TembaObject):
     name = SimpleField()
     type = SimpleField()
     archived = BooleanField()
-    # labels = ObjectListField(item_class=ObjectRef)
+    labels = ObjectListField(item_class=ObjectRef)
     expires = IntegerField()
     created_on = DatetimeField()
     modified_on = DatetimeField()
