@@ -184,6 +184,7 @@ class FlowStart(TembaObject):
     status = SimpleField()
     restart_participants = BooleanField()
     exclude_active = BooleanField()
+    extra = SimpleField()
     params = SimpleField()
     created_on = DatetimeField()
     modified_on = DatetimeField()
